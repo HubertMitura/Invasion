@@ -124,7 +124,7 @@ def update_aliens(ai_settings, stats, screen,ship, aliens, bullets):
 		bullets)
 	
 
-def update_screen(ai_settings, screen, stats, ship, aliens, bullets,
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
 	play_button):
 	screen.fill(ai_settings.bg_color)
 	ship.blitme()
@@ -133,6 +133,8 @@ def update_screen(ai_settings, screen, stats, ship, aliens, bullets,
 
 	for bullet in bullets.sprites():
 		bullet.draw_bullet()
+
+	sb.show_score()
 
 	if not stats.game_active:
 		play_button.draw_button()
